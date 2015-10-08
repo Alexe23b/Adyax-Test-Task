@@ -1,11 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<title>Main</title>
+<?php require_once "blocks/attach_style.php"; ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta name="robots" content="" />
-<title>Main</title>
 </head>
 <body>
 	<table border="1" style="width: 100%; margin: 0 auto;">
@@ -15,9 +16,9 @@
 			?>
 		</tr>
 		<tr>
-			<td colspan="3">
-				<h2>Меню</h2>
-			</td>
+			<?php
+				require_once "blocks/menu.php";
+			?>
 		</tr>
 		<tr>
 			<td style="width: 20%">
