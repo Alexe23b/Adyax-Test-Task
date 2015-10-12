@@ -46,8 +46,11 @@
 							</td>
 						</tr>
 						<tr>
-							<td colspan="2">
+							<td>
 								<input type="submit" name="auth_button" value="Войти!" />
+							</td>
+							<td>
+								<a href="registration.php">Регистрация</a>
 							</td>
 						</tr>
 					</table>
