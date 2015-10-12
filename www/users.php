@@ -1,10 +1,11 @@
 <?php
 	require_once "lib/connectdb.php";
+	$result = $mysqli->query("SELECT * FROM users");
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Main</title>
+<title>Пользователи</title>
 <?php require_once "blocks/attach_style.php"; ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
@@ -55,7 +56,19 @@
 				<h3>Статистика</h3>
 			</td>
 			<td style="width: 60%">
-				<h3>Контент</h3>
+				<h2>Список пользователей</h2>
+				<?php
+					$rows = $result->fetch_assoc();
+					do
+					{
+						echo "<p>Полное имя:<b>".$rows['full_name']."</b></p>";
+						echo "<p>Логин:<b>".$rows['login']."</b></p>";
+						echo "<p>Электронная почта:<b>".$rows['e-mail']."</b></p>";
+						echo "<p>Дата регистрации:<b>".$rows['date']."</b></p>";
+						echo "<hr />";
+					}
+					while($rows = $result->fetch_assoc());
+				?>
 			</td>
 			<td style="width: 20%">
 				<h3>Поисковик</h3>
