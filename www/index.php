@@ -26,14 +26,14 @@
 		<tr>
 			<td style="width: 20%">
 				<h3>Форма входа</h3>
-				<form name="" method="post" action="">
+				<form name="" method="post" action="authorisation.php">
 					<table>
 						<tr>
 							<td>
 								<label>Логин</label>
 							</td>
 							<td>
-								<input type="text" name="" /> 
+								<input type="text" name="login" required/> 
 							</td>
 						</tr>
 						<tr>
@@ -41,7 +41,7 @@
 								<label>Пароль</label>
 							</td>
 							<td>
-								<input type="password" name="" /> 
+								<input type="password" name="password" required/> 
 							</td>
 						</tr>
 						<tr>

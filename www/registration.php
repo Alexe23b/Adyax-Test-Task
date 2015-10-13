@@ -27,7 +27,7 @@
 ?>
 
 <html><body>
-	<form action= "registration.php" method= "post">
+	<form name= "" action= "registration.php" method= "post">
 		<p>Введите имя и фамилию: <input type="text" name="name" required/></p>
 		<p>Ввведите логин: <input type="text" name="login" required/></p>
 		<p>Введите пароль: <input type="password" name="pass1" required/></p>
