@@ -1,9 +1,15 @@
 <?php
-	//$mysqli = @new mysqli("localhost", "alexe23b", "qwerty", "adyax");
 	require_once "lib/connectdb.php";
 	if (isset($_POST['my_button'])){
 		$name = ($_POST['name']);
 		$login = ($_POST['login']);
+		$result = $mysqli->query("SELECT login FROM users");
+		while($row = $result->fetch_assoc()){
+			if ($row[login] == $login){
+			die("Пользователь с такими данными уже существует, выберите другой логин!");
+			}	
+		}
+		
 		$pass1 = ($_POST['pass1']);
 		$pass2 = ($_POST['pass2']);
 		$mail = ($_POST['e-mail']);
