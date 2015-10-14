@@ -6,22 +6,22 @@
 		$result = $mysqli->query("SELECT login FROM users");
 		while($row = $result->fetch_assoc()){
 			if ($row[login] == $login){
-			die("Пользователь с такими данными уже существует, выберите другой логин!");
+			exit("<script>alert(\"Пользователь с такими данными уже существует, выберите другой логин!\");</script>");
 			}	
 		}
-		
 		$pass1 = ($_POST['pass1']);
 		$pass2 = ($_POST['pass2']);
 		$mail = ($_POST['e-mail']);
 		$date = date("Y-m-d");
-		mkdir("users_data/".$login,0777);
+		
 		if ($pass1 == $pass2){
-			$pass = md5($pass1);			
+			$pass = md5($pass1);
+			mkdir("users_data/".$login,0777);			
 			$mysqli->query("INSERT INTO users VALUES ('', '$name', '$login', '$pass', '$mail', '$date')");
-			echo "Пользователь успешно зарегестрирован!";
+			echo "<script>alert(\"Пользователь успешно зарегестрирован!\");</script>";
 		}	
 		else{
-			die("Введеные пароли не совпадают!");
+			echo("<script>alert(\"Введеные пароли не совпадают!\");</script>");
 		}
 	}
 ?>

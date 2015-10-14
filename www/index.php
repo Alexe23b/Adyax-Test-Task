@@ -26,7 +26,7 @@
 		<tr>
 			<td style="width: 20%">
 				<h3>Форма входа</h3>
-				<form name="" method="post" action="authorisation.php">
+				<form name="" method="post" action="">
 					<table>
 						<tr>
 							<td>
@@ -83,6 +83,7 @@
 	  <tr>
 	  		<?php
 		  		require_once "blocks/footer.php";
+				require_once "blocks/authorisation.php";
 			?>
 	  </tr>
 	</table>
